@@ -2,7 +2,7 @@ import Jabber from 'jabber';
 import {makeFirstLetterCapital} from '.';
 import {CURRENT_LOCATION} from '../constants';
 import {Location, UserInterface} from '../interfaces';
-import {arePointsNear, distance, generateLocation} from './location';
+import {arePointsNear, generateLocation} from './location';
 
 export const generateData = (
   currentLocation: Location,
@@ -25,8 +25,9 @@ export const generateData = (
       name,
       lat,
       lng,
-      image: `https://i.pravatar.cc/150?img=${i > 70 ? i - 70 : i}`, // Because Pravatar provides 70 images
+      image: `https://i.pravatar.cc/150?img=${i > 70 ? i - 70 : i}`,
       id: i,
+      chats: [],
     });
   }
   return data;
@@ -38,10 +39,6 @@ const generateUserName = () => {
 };
 
 export const filterData = (allData: Array<UserInterface>, range: number) => {
-  console.log(
-    'arePointsNear({lat: u.lat, lng: u.lng}, CURRENT_LOCATION, range)',
-    distance(76.193276, 27.7089388, 76.1797832, 27.7103228),
-  );
   const newData: Array<UserInterface> = allData.filter(u =>
     arePointsNear({lat: u.lat, lng: u.lng}, CURRENT_LOCATION, range),
   );

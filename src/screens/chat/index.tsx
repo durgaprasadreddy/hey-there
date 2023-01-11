@@ -31,7 +31,7 @@ const Chat = ({route}: ChatScreenProps) => {
       newMessages.push(newMessage);
       setMessages(newMessages);
     }
-  }, [messages, newMessage, user.id]);
+  }, [newMessage]);
 
   const onSendMessage = () => {
     const newMessages = [...messages];

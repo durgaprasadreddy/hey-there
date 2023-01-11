@@ -27,7 +27,6 @@ const App = () => {
     message: MessageInterface,
     otherUser: ChatUserInterface,
   ) => {
-    console.log('onMessageSend Send called', message);
     sendReply(message.message, otherUser);
   };
 

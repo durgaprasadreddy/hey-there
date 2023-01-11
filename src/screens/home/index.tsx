@@ -27,7 +27,6 @@ const Home: React.FC<HomeScreenProps> = props => {
   }, []);
 
   const gotoMapScreen = () => {
-    console.log('userDummyData', userDummyData);
     props.navigation.navigate('Map');
   };
 

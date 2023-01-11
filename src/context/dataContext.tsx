@@ -17,7 +17,6 @@ const DataProvider = (props: DataContextProps) => {
   const [newMessage, setNewMessage] = useState(false as any);
 
   useEffect(() => {
-    console.log('updateUserWithNewMessage', props.updateUserWithNewMessage);
     if (props.updateUserWithNewMessage) {
       setNewMessage(props.updateUserWithNewMessage);
     }
